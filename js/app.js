@@ -185,8 +185,8 @@ createApp({
   },
   mounted() {
     Promise.all([
-      axios.get('global_environmental_agencies_final_with_language.json'),
-      axios.get('who_pm25_latest_with_year.json')
+axios.get('/data/countries.json')
+axios.get('/data/pm25.json')
     ]).then(([agencyRes, pm25Res]) => {
       const pm25Map = Object.fromEntries(pm25Res.data.map(pm => [pm.country_en.toLowerCase(), pm]));
       this.countries = agencyRes.data.map(item => {
