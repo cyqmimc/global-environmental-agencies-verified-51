@@ -185,7 +185,7 @@ createApp({
   },
   mounted() {
     Promise.all([
-axios.get('/data/countries.json')
+axios.get('/data/countries.json')，
 axios.get('/data/pm25.json')
     ]).then(([agencyRes, pm25Res]) => {
       const pm25Map = Object.fromEntries(pm25Res.data.map(pm => [pm.country_en.toLowerCase(), pm]));
